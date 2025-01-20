@@ -20,7 +20,14 @@ export class HomePage {
   carga = false;
   mostrarBtnRecuperar= false;
 
+<<<<<<< Updated upstream
   constructor(private router: Router, private animation: AnimationController, private auth:AuthService) { }
+=======
+  constructor(
+    private router: Router, 
+    private animation: AnimationController,
+    private auth: AuthService) { }
+>>>>>>> Stashed changes
 
 
 //Boton conectar con router a Perfil
@@ -28,7 +35,11 @@ export class HomePage {
   conectar() {
 
     if (this.user.usuario.length > 0 && this.user.password.length > 0) {
+<<<<<<< Updated upstream
       if (this.auth.login(this.user.usuario,this.user.password)) {
+=======
+      if (this.auth.login(this.user.usuario, this.user.password)) {
+>>>>>>> Stashed changes
 
 //spiner de carga simulando delay con MS
 

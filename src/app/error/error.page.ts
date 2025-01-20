@@ -1,6 +1,10 @@
+<<<<<<< Updated upstream
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ToastController } from '@ionic/angular';
+=======
+import { Component, OnInit } from '@angular/core';
+>>>>>>> Stashed changes
 
 @Component({
   selector: 'app-error',
@@ -10,6 +14,7 @@ import { ToastController } from '@ionic/angular';
 })
 export class ErrorPage implements OnInit {
 
+<<<<<<< Updated upstream
   constructor(private router:Router, private toast: ToastController) { }
 
   ngOnInit() {}
@@ -29,6 +34,11 @@ export class ErrorPage implements OnInit {
     toast.then((res) => {
       res.present();
     });
+=======
+  constructor() { }
+
+  ngOnInit() {
+>>>>>>> Stashed changes
   }
 
 }

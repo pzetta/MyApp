@@ -10,6 +10,11 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
+      <ion-buttons slot="end">
+        <ion-button fill="clear" color="danger" (click)="logout()">
+          <ion-icon slot="end" name="log-out-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
       <ion-title size="large">Perfil de Usuario</ion-title>
     </ion-toolbar>
     

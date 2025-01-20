@@ -1,8 +1,15 @@
+<<<<<<< Updated upstream
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AnimationController } from '@ionic/angular';
 import { AuthService } from '../Servicios/auth.service';
 import { ToastController } from '@ionic/angular';
+=======
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../Servicios/auth.service';
+import { ToastController } from '@ionic/angular';
+import { Router } from '@angular/router';
+>>>>>>> Stashed changes
 
 @Component({
   selector: 'app-perfil',
@@ -10,6 +17,7 @@ import { ToastController } from '@ionic/angular';
   styleUrls: ['./perfil.page.scss'],
   standalone: false,
 })
+<<<<<<< Updated upstream
 export class PerfilPage implements OnInit, AfterViewInit {
   constructor(
     private router: Router,
@@ -28,6 +36,39 @@ export class PerfilPage implements OnInit, AfterViewInit {
     this.user = history.state.user || { usuario: '', password: '' };
     this.nombreUsuario = this.user.usuario;
   }
+=======
+export class PerfilPage implements OnInit {
+  constructor(private auth: AuthService, private router: Router,
+              private toast:ToastController
+  ) {}
+  user={
+    usuario:"",
+    password:""
+  }
+nombreUsuario= '';
+  ngOnInit() {}
+    ngAfterContentInit(){
+    this.user = history.state.user;
+    this.nombreUsuario = this.user.usuario; 
+    }
+    logout() {
+      this.auth.logout();
+      this.router.navigate(['/home']);
+      this.generarToast("Usuario Desconectado");
+    }
+
+    generarToast(message: string){
+      const toast = this.toast.create({
+        message: message,
+        duration: 3000,
+        position: 'bottom',
+      });
+
+      toast.then((res) => {
+        res.present();
+      });
+    }
+>>>>>>> Stashed changes
 
   ngAfterViewInit() {
     this.animacionAutito(); // Llama la animación después de que los elementos estén disponibles
@@ -88,3 +129,4 @@ export class PerfilPage implements OnInit, AfterViewInit {
     }
   }
 }
+
